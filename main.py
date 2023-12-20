@@ -1,67 +1,13 @@
-# test_string = "helleo"
-# start_point = 0
-# end_point = len(test_string)
-# letter = "e"
-# for i in range(len(test_string)):
-#     t_index = test_string.find(letter, i, end_point)
-#     if i == t_index:
-#         print(test_string[i])
+def prime_checker(number: int):
+    if (number % 2 == 0) or (number % 3 == 0) or (number % 5 == 0) or (number % 7 == 0) or (number % 11 == 0):
+        return False
+    return True
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
 
-print(stages[7])
+def prime_checker_loop(number: int):
+    for i in range(2, number):
+        if number % i == 0:
+            return False
+    return True
+
+print("@".isalnum())

@@ -1,4 +1,5 @@
 import random
+import art
 
 #                   Our Blackjack House Rules              #
 # The deck is unlimited in size.
@@ -14,13 +15,13 @@ import random
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 computer_choice = ["yes", "no"]
 computer_hand = []
-computer_score = 0
 user_hand = []
+computer_score = 0
 user_score = 0
 current_player_index = 0
 
 
-def hit_card(curr_player_score):
+def hit_a_card(curr_player_score):
     choice = current_player_choice(curr_player_score)
     if player_turn() == 0:
         user_hand.append(choice)
@@ -44,3 +45,24 @@ def current_player_choice(curr_player_score):
     if choice == 11 and curr_player_score > 10:
         choice = 1
     return choice
+
+
+def comparison(computer_score, user_score):
+    if computer_score > user_score:
+        return "Dealer"
+    return "You"
+
+
+def play_option():
+    while True:
+        option = input("Do you want to play a game of Blackjack? 'y' or 'n': ").lower()
+        if option == 'n':
+            return False
+        elif option != 'y':
+            print("invalid input!")
+        else:
+            return True
+
+
+while True:
+    play_option()

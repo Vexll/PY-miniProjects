@@ -1,13 +1,16 @@
-def prime_checker(number: int):
-    if (number % 2 == 0) or (number % 3 == 0) or (number % 5 == 0) or (number % 7 == 0) or (number % 11 == 0):
-        return False
-    return True
+import os
 
 
-def prime_checker_loop(number: int):
-    for i in range(2, number):
-        if number % i == 0:
-            return False
-    return True
+def clear_screen():
+    os.system("cls" if os.name == "nt" else "clear")
 
-print("@".isalnum())
+
+while True:
+    print("dsfsdfhsdfjhsdkhfsdkhfksdhfsd")
+    print("dsfsdfhsdfjhsdkhfsdkhfksdhfsd")
+    print("dsfsdfhsdfjhsdkhfsdkhfksdhfsd")
+
+    x = int(input("(1/2): "))
+    if x == 1:
+        print("clearing...")
+        clear_screen()

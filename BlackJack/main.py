@@ -1,6 +1,4 @@
-import random
-import art
-import os
+import random, art, os
 
 #                   Our Blackjack House Rules              #
 # The deck is unlimited in size.
@@ -14,8 +12,6 @@ import os
 # The computer is the dealer.
 
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-computer_hand = None
-user_hand = None
 
 
 def get_card(score, player):
@@ -69,7 +65,7 @@ def check_win(computer_score, user_score):
     print("You win!")
 
 
-def menu_game():
+def menu():
     while True:
         option = input("Do you want to play a game of Blackjack? 'y' or 'n': ").lower()
         if option == "n":
@@ -116,7 +112,7 @@ def play_game():
 while True:
     user_hand = []
     computer_hand = []
-    flag = menu_game()
+    flag = menu()
     if not flag:
         break
     hand_preparation()

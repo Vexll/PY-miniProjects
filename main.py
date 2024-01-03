@@ -1,16 +1,21 @@
-import os
+def firstNonRepeatingCharacter(s: str) -> int:
+    char_count = {}
+
+    for char in s:
+        char_count[char] = char_count.get(char, 0) + 1
 
 
-def clear_screen():
-    os.system("cls" if os.name == "nt" else "clear")
+    for i, char in enumerate(s):
+        if char_count[char] == 1:
+            return i
+
+    return -1
 
 
-while True:
-    print("dsfsdfhsdfjhsdkhfsdkhfksdhfsd")
-    print("dsfsdfhsdfjhsdkhfsdkhfksdhfsd")
-    print("dsfsdfhsdfjhsdkhfsdkhfksdhfsd")
+# Example usage:
+s1 = 'leetcode'
+print(firstNonRepeatingCharacter(s1))  # Output: 0
 
-    x = int(input("(1/2): "))
-    if x == 1:
-        print("clearing...")
-        clear_screen()
+s2 = 'loveleetcode'
+print(firstNonRepeatingCharacter(s2))  # Output: 2
+

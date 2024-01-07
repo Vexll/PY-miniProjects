@@ -1,21 +1,9 @@
-def firstNonRepeatingCharacter(s: str) -> int:
-    char_count = {}
+from prettytable import PrettyTable
 
-    for char in s:
-        char_count[char] = char_count.get(char, 0) + 1
+table = PrettyTable()
+table.add_column("Pokemon Name", ['Pikachu', 'Squirtle', 'Charmander'])
+table.add_column("Type", ['Electric', 'Water', 'Fire'])
 
+print(table)
 
-    for i, char in enumerate(s):
-        if char_count[char] == 1:
-            return i
-
-    return -1
-
-
-# Example usage:
-s1 = 'leetcode'
-print(firstNonRepeatingCharacter(s1))  # Output: 0
-
-s2 = 'loveleetcode'
-print(firstNonRepeatingCharacter(s2))  # Output: 2
 

@@ -2,13 +2,6 @@ from turtle import Turtle, Screen
 import random
 
 
-def random_color() -> tuple:
-    r = random.randint(0, 255)
-    g = random.randint(0, 255)
-    b = random.randint(0, 255)
-    return r, g, b
-
-
 def get_turtles() -> list:
     turtles_list = []
     home_position = [(-225, -80), (-225, -40), (-225, 0), (-225, 40), (-225, 80), (-225, 120)]

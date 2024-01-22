@@ -1,5 +1,4 @@
 from turtle import Turtle, Screen
-from colors import turtle_colors
 import random
 
 COORDINATE = ["x", "y"]
@@ -34,8 +33,11 @@ def draw_different_shapes(tur: Turtle):
         draw_certain_shape(tur, edges, shape_angle)
 
 
-def random_color():
-    return random.choice(turtle_colors)
+def random_color() -> tuple:
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return r, g, b
 
 
 def random_walk(tur: Turtle, length: int, steps: int):
@@ -64,9 +66,14 @@ def draw_spirograph(tur: Turtle, size_of_gap):
         tur.circle(120)
 
 
-tim = Turtle()
-tim.shape("arrow")
-tim.speed("fastest")
-draw_spirograph(tim, 5)
-my_screen = Screen()
-my_screen.exitonclick()
+def main():
+    tim = Turtle()
+    tim.shape("arrow")
+    tim.speed("fast")
+    my_screen = Screen()
+    my_screen.colormode(255)
+    my_screen.exitonclick()
+
+
+if "__main__" == __name__:
+    main()

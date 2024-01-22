@@ -68,6 +68,9 @@ def draw_spirograph(tur: Turtle, size_of_gap):
 
 def main():
     tim = Turtle()
+    ali = Turtle()
+    ali.color("red")
+    ali.forward(100)
     tim.shape("arrow")
     tim.speed("fast")
     my_screen = Screen()

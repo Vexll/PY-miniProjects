@@ -1,7 +1,7 @@
 from turtle import Turtle, Screen
 import random
 
-
+ 
 def get_turtles() -> list:
     turtles_list = []
     home_position = [(-225, -80), (-225, -40), (-225, 0), (-225, 40), (-225, 80), (-225, 120)]

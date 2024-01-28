@@ -12,6 +12,7 @@ def print_pen_properties(pens):
         print(f"Color: {pen.get_color()}, Brand: {pen.brand}")
 
 
-# Example usage
-pen_list = [Pen("Blue", "Brand A"), Pen("Red", "Brand B"), Pen("Green", "Brand C")]
-print_pen_properties(pen_list)
+alphabets = ['a', 'b', 'c']
+for i, letter in enumerate(alphabets):
+    print(i)
+    print(letter)

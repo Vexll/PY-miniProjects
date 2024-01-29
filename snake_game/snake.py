@@ -15,9 +15,14 @@ class Snake:
         self.head = self.segments[0]
 
     def create_snake(self):
+        temp = 0
         for pos in STARTING_POSITION:
             new_segment = Turtle("square")
-            new_segment.color("white")
+            if temp == 0:
+                new_segment.color("red")
+                temp += 1
+            else:
+                new_segment.color("white")
             new_segment.penup()
             new_segment.goto(pos)
             self.segments.append(new_segment)
@@ -53,5 +58,3 @@ class Snake:
     def increase_tail(self):
         new_segment = self.segments[-1].clone()
         self.segments.append(new_segment)
-
-

@@ -50,5 +50,8 @@ class Snake:
 
         self.head.forward(MOVE_DISTANCE)
 
-    def increase_length(self):
-        pass
+    def increase_tail(self):
+        new_segment = self.segments[-1].clone()
+        self.segments.append(new_segment)
+
+

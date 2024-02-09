@@ -14,10 +14,10 @@ def screen_setup(screen: Screen):
 
 def key_events(screen, snake):
     screen.listen()
-    screen.onkey(snake.up, "Up")
-    screen.onkey(snake.down, "Down")
-    screen.onkey(snake.right, "Right")
-    screen.onkey(snake.left, "Left")
+    screen.onkeypress(snake.up, "Up")
+    screen.onkeypress(snake.down, "Down")
+    screen.onkeypress(snake.right, "Right")
+    screen.onkeypress(snake.left, "Left")
 
 
 def check_tail_collision(snake: Snake):
@@ -42,11 +42,11 @@ def main():
 
     while is_game_on:
         screen.update()
-        time.sleep(0.1)
+        time.sleep(0.08)
         snake.move()
 
         # detected collision with food
-        if snake.head.distance(food) < 15:
+        if snake.head.distance(food) < 18:
             food.respawn()
             scoreboard.increase_score()
             scoreboard.display_score()

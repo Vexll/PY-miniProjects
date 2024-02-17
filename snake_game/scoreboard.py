@@ -15,9 +15,11 @@ class Scoreboard(Turtle):
         self.speed("fastest")
         self.goto(0, 265)
         self.score = 0
-        self.high_score = 0
+        with open("data.txt", "r") as data_file:
+            self.high_score = int(data_file.read())
 
     def display_score(self):
+        self.update_highscore()
         self.clear()
         text = f"Score: {self.score}    High Score: {self.high_score}"
         self.write(text, False, ALIGNMENT, FONT)
@@ -43,3 +45,7 @@ class Scoreboard(Turtle):
     def play_again(self):
         self.goto(0, 30)
         self.write("Press space to play again", False, ALIGNMENT, PLAY_AGAIN_FONT)
+
+    def update_highscore(self):
+        with open("data.txt", "w") as data_file:
+            data_file.write(f"{self.high_score}")

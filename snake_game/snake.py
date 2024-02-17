@@ -58,3 +58,11 @@ class Snake:
     def increase_tail(self):
         new_segment = self.segments[-1].clone()
         self.segments.append(new_segment)
+
+    def hide_segments(self):
+        for seg in self.segments:
+            seg.hideturtle()
+
+    def reset(self):
+        self.hide_segments()
+        self.__init__()

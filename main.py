@@ -11,12 +11,24 @@ class Pen:
         return self.color
 
 
-def print_pen_properties(pens):
-    for pen in pens:
-        print(f"Color: {pen.get_color()}, Brand: {pen.brand}")
+# def print_pen_properties(pens):
+#     for pen in pens:
+#         print(f"Color: {pen.get_color()}, Brand: {pen.brand}")
+#
+#
+# alphabets = ['a', 'b', 'c']
+# for i, letter in enumerate(alphabets):
+#     print(i)
+#     print(letter)
+is_game_on = True
 
 
-alphabets = ['a', 'b', 'c']
-for i, letter in enumerate(alphabets):
-    print(i)
-    print(letter)
+def game_off():
+    global is_game_on
+    is_game_on = False
+
+screen = Screen()
+screen.listen()
+screen.onkey(game_off, "w")
+
+screen.exitonclick()

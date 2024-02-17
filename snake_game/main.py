@@ -30,13 +30,12 @@ def main():
     screen = Screen()
     screen_setup(screen)
 
-    scoreboard = Scoreboard()
-    scoreboard.display_score()
-
     snake = Snake()
     key_events(screen, snake)
-
     food = Food()
+
+    scoreboard = Scoreboard()
+    scoreboard.display_score()
 
     is_game_on = True
 
@@ -49,19 +48,23 @@ def main():
         if snake.head.distance(food) < 18:
             food.respawn()
             scoreboard.increase_score()
-            scoreboard.display_score()
             snake.increase_tail()
 
         # detected collision with wall
         if (snake.head.xcor() > 290 or snake.head.xcor() < -290) or (
                 snake.head.ycor() > 290 or snake.head.ycor() < -290):
-            is_game_on = False
+            scoreboard.reset()
+            snake.reset()
 
         # detected collision with tail
         if check_tail_collision(snake):
-            is_game_on = False
+            scoreboard.reset()
+            snake.reset()
 
     scoreboard.game_over()
+    scoreboard.set_high_score()
+    scoreboard.play_again()
+
     screen.exitonclick()
 
 

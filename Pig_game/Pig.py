@@ -5,7 +5,7 @@ from collections import namedtuple
 def add_player(name: str, players):
     players.append(namedtuple('Player', ['name', 'score']))
     players[-1].name = name
-    players[-1].score = 0
+    players[-1].user_score = 0
 
 
 def roll():
@@ -41,15 +41,15 @@ def main():
 
             if rolling_value == 1:
                 print('Unfortunately you got 1, so your score will be zero')
-                players[current_player_index].score = 0
+                players[current_player_index].user_score = 0
             else:
                 print(f'You got {rolling_value}')
-                players[current_player_index].score += rolling_value
+                players[current_player_index].user_score += rolling_value
 
         # display current score
-        print(f'\n{players[current_player_index].name} current score = {players[current_player_index].score}')
+        print(f'\n{players[current_player_index].name} current score = {players[current_player_index].user_score}')
 
-        endpoint = players[current_player_index].score
+        endpoint = players[current_player_index].user_score
 
         if endpoint >= 10:
             print(f'Congratulation!\nThe winner is {players[current_player_index].name}!')
